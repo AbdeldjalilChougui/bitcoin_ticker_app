@@ -1,35 +1,6 @@
+import 'package:bitcoin_ticker/models/coin_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-const List<String> currenciesList = [
-  'AUD',
-  'BRL',
-  'CAD',
-  'CNY',
-  'EUR',
-  'GBP',
-  'HKD',
-  'IDR',
-  'ILS',
-  'INR',
-  'JPY',
-  'MXN',
-  'NOK',
-  'NZD',
-  'PLN',
-  'RON',
-  'RUB',
-  'SEK',
-  'SGD',
-  'USD',
-  'ZAR'
-];
-
-const List<String> cryptoList = [
-  'BTC',
-  'ETH',
-  'LTC',
-];
 
 class CoinData {
   static const apiKey = "E2583C82-C95E-4679-975B-32B1AF8275CD";
