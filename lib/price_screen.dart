@@ -18,7 +18,7 @@ class _PriceScreenState extends State<PriceScreen> {
     List<DropdownMenuItem<String>> dropdownItems = [];
     for (String currency in currenciesList) {
       var newItem = DropdownMenuItem(
-        child: Text(currency),
+        child: Text(currency, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
         value: currency,
       );
       dropdownItems.add(newItem);
@@ -76,7 +76,7 @@ class _PriceScreenState extends State<PriceScreen> {
     getData();
   }
 
-  List<CryptoCard> gett () {
+  List<CryptoCard> get () {
     List<CryptoCard> cards = [];
     for (String crypto in cryptoList)
     {
@@ -96,6 +96,7 @@ class _PriceScreenState extends State<PriceScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('🤑 Coin Ticker'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,13 +106,13 @@ class _PriceScreenState extends State<PriceScreen> {
             padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: gett(),
+              children: get(),
             ),
           ),
           Container(
-            height: 150.0,
+            height: 100.0,
             alignment: Alignment.center,
-            padding: EdgeInsets.only(bottom: 30.0),
+            padding: EdgeInsets.only(bottom: 0.0),
             color: Colors.lightBlue,
             child: Platform.isAndroid ? androidDropDown() : iOSPicker(),
           ),
