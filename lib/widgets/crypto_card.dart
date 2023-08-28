@@ -8,9 +8,9 @@ class CryptoCard extends StatelessWidget {
     @required this.value,
   });
 
-  final String crypto;
-  final String selectedCurrency;
-  final String value;
+  final String? crypto;
+  final String? selectedCurrency;
+  final String? value;
 
   @override
   Widget build(BuildContext context) {
