@@ -12,7 +12,7 @@ class PriceScreen extends StatefulWidget {
 
 class _PriceScreenState extends State<PriceScreen> {
 
-  String selectedCurrency = "USD";
+  String? selectedCurrency = "USD";
 
   DropdownButton androidDropDown () {
     List<DropdownMenuItem<String>> dropdownItems = [];
@@ -57,12 +57,12 @@ class _PriceScreenState extends State<PriceScreen> {
   }
 
   Map<String,String> cryptoPrices = {};
-  bool isWaiting;
+  bool? isWaiting;
 
   void getData() async{
     isWaiting = true;
     try {
-      var dataPrices = await CoinData().getCoinData(selectedCurrency);
+      var dataPrices = await CoinData().getCoinData(selectedCurrency!);
       isWaiting = false;
       setState(() {
         cryptoPrices = dataPrices;
@@ -84,7 +84,7 @@ class _PriceScreenState extends State<PriceScreen> {
         CryptoCard(
           crypto: crypto,
           selectedCurrency: selectedCurrency,
-          value: isWaiting ? "?" : cryptoPrices[crypto],
+          value: isWaiting! ? "?" : cryptoPrices[crypto],
         ),
       );
     }
